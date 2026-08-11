@@ -3,7 +3,8 @@
 **Proyecto:** Mejora PDP (Product Detail Page)  
 **Fecha:** Agosto 2026  
 **Autor:** Claude (UX/UI + Frontend)  
-**Status:** ✅ Completado
+**Status:** ✅ Completado (Mobile + Desktop)
+**Última Actualización:** Desktop frame 1280x3500px creado en Figma
 
 ---
 
@@ -12,11 +13,13 @@
 Se ha diseñado y desarrollado una **PDP optimizada con identidad Puppis** aplicando:
 
 - ✅ Identidad visual completa (colores, tipografía, componentes)
-- ✅ Estructura mobile-first (390px) según estándar VTEX
-- ✅ Layout responsive desktop (1280px)
+- ✅ **Diseño Mobile** (390px) en Figma - estructura interactiva completa
+- ✅ **Diseño Desktop** (1280px) en Figma - layout side-by-side con 10 secciones
+- ✅ HTML/CSS producción lista para VTEX IO (mobile-first responsive)
 - ✅ Componentes interactivos (sticky bar, acordeones, selector de variantes)
 - ✅ Conversión optimizada (CTA prominente, jerarquía de precios clara)
 - ✅ Accesibilidad AA (contraste, targets ≥44px)
+- ✅ Figma → Entregables listos para equipo de diseño + implementación
 
 ---
 
@@ -119,15 +122,20 @@ Se ha diseñado y desarrollado una **PDP optimizada con identidad Puppis** aplic
   - Puppis Club (15% off, CTA)
   - Footer azul
 
-#### **Página 2: 🖥️ Desktop (1280px)**
-- Frame completo de PDP desktop (1800px altura)
-- Layout: Galería (600px) | Producto (580px) — side-by-side
-- Componentes:
-  - Header desktop con logo expandido
-  - Producto info: marca → título (28px) → rating → precio grande (40px) → CTA
-  - Contenido 2 columnas: Descripción | Especificaciones
-  - Reseñas full-width con rating agregado + featured reviews
-  - Puppis Club card destacada (full-width)
+#### **Página 2: 🖥️ Desktop (1280px)** ✅
+- Frame completo de PDP desktop (1280x3500px altura)
+- Layout: Galería (550px) | Producto (650px) — side-by-side
+- Componentes implementados:
+  - Header: logo 🐾 Puppis + search icon + carrito (80px)
+  - Breadcrumb: navegación truncada (40px)
+  - Hero: Galería + Product Info lado-a-lado (600px altura)
+  - Scheduled Shipping: Card destacada amarilla (#FAD972) con precio mensual
+  - Shipping Options: 3 filas (Domicilio, Flash, Retiro) en fondos gris
+  - Description & Specs: 2 columnas balanceadas
+  - Reviews: Aggregate rating 4.8⭐ + featured review en white card
+  - Cross-Sell: 4 productos en carousel (Snacks, Vitaminas, Juguetes, Accesorios)
+  - Puppis Club: Banner azul oscuro con 💎 icon, 15% discount highlight
+  - Footer: Azul 900, copyright + lema "Las mascotas primero 🐾"
 
 **Componentes reutilizables:**
 - Botones (CTA azul, secundario blanco)
@@ -241,21 +249,30 @@ Desktop: 1024px+     (ajustes secundarios en 1200px, 1300px)
 ## 📝 Changelog Técnico
 
 ```
-✅ [FEAT] Estructura mobile-first (390px) según specs VTEX
-✅ [FEAT] Layout desktop responsive (1280px) side-by-side
-✅ [FEAT] Sticky bar: precio + CTA al scrollear
-✅ [FEAT] Acordeones: envío (3 filas), especificaciones, ingredientes
-✅ [FEAT] Selector variantes: chips activos/inactivos
-✅ [FEAT] Stepper cantidad: −/+, min=1
-✅ [FEAT] Envío Programado: card destacada única (amarillo)
-✅ [FEAT] Carrusel cross-sell: snap scroll, 2 items mobile
-✅ [FEAT] Galería: swipeable, dots navegables
-✅ [FEAT] Rating: anclable a sección reseñas
-✅ [FEAT] Token CSS: colores, espaciados, radios
-✅ [FEAT] Figma: 2 páginas, 2 frames, componentes
+✅ [FIGMA] Página Mobile (390px): Frame 2200px con 17 secciones
+✅ [FIGMA] Página Desktop (1280px): Frame 3500px con 10 secciones
+  - Header (80px) + Breadcrumb (40px)
+  - Hero: Galería (550px) + Product Info (650px) - side-by-side
+  - Scheduled Shipping: Card amarilla destacada con pricing
+  - Shipping Options: 3 rows expandibles
+  - Description & Specs: 2-column layout balanceado
+  - Reviews: Aggregate rating + featured review
+  - Cross-Sell: 4-item carousel
+  - Puppis Club: Banner azul con 15% discount
+  - Footer: Azul oscuro con branding
+
+✅ [HTML] Estructura mobile-first (390px) según specs VTEX
+✅ [HTML] Sticky bar: precio + CTA al scrollear
+✅ [HTML] Acordeones: envío (3 filas), especificaciones, ingredientes
+✅ [HTML] Selector variantes: chips activos/inactivos
+✅ [HTML] Stepper cantidad: −/+, min=1
+✅ [HTML] Envío Programado: card destacada única (amarillo)
+✅ [HTML] Carrusel cross-sell: snap scroll
+✅ [HTML] Galería: swipeable, dots navegables
 ✅ [UX] Jerarquía de precios clara (precio regular manda)
-✅ [A11y] Contraste AA, targets ≥44px
+✅ [A11y] Contraste AA (#23376E sobre #FAD972), targets ≥44px
 ✅ [PERF] Vanilla JS (sin dependencias)
+✅ [DESIGN] Identidad Puppis: Colores guardrails + Roboto fonts + Tono voseo
 ```
 
 ---
