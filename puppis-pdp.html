@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Royal Canin Mini Adulto - Puppis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ═══════════════════════════════════════════════════════════
+       VARIABLES DE MARCA PUPPIS
+       ═══════════════════════════════════════════════════════════ */
+    :root {
+      /* Colores */
+      --color-azul-900: #23376E;    /* Titulares */
+      --color-azul-700: #194F90;    /* CTA, precio, links */
+      --color-azul-500: #3F7CBD;    /* Acentos, badges */
+      --color-amarillo-900: #FFD100; /* Highlights, badges promo */
+      --color-amarillo-400: #FAD972; /* Fondos promocionales */
+      --color-amarillo-300: #FABF1A; /* Amarillo secundario */
+      --color-gris-100: #F6F6F6;    /* Fondos */
+      --color-gris-50: #EDEDED;     /* Separadores */
+      --color-blanco: #FFFFFF;
+      --color-gris-text: #666666;
+      --color-gris-light: #999999;
+
+      /* Tipografías (fallbacks) */
+      --font-display: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+      /* Espaciado */
+      --spacing-xs: 4px;
+      --spacing-sm: 8px;
+      --spacing-md: 16px;
+      --spacing-lg: 24px;
+      --spacing-xl: 32px;
+
+      /* Border radius */
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --radius-full: 9999px;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       RESET Y ESTILOS GLOBALES
+       ═══════════════════════════════════════════════════════════ */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--color-gris-text);
+      background: var(--color-blanco);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       HEADER STICKY
+       ═══════════════════════════════════════════════════════════ */
+    .header-top {
+      position: sticky;
+      top: 0;
+      background: var(--color-blanco);
+      border-bottom: 1px solid var(--color-gris-50);
+      padding: var(--spacing-md);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 100;
+      gap: var(--spacing-md);
+    }
+
+    .header-logo {
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--color-azul-900);
+      background: var(--color-amarillo-900);
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .header-search {
+      flex: 1;
+      background: var(--color-gris-100);
+      border: none;
+      padding: 8px var(--spacing-md);
+      border-radius: var(--radius-md);
+      font-size: 13px;
+      color: var(--color-gris-text);
+    }
+
+    .header-cart {
+      width: 40px;
+      height: 40px;
+      background: var(--color-gris-100);
+      border: none;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--color-azul-700);
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       BREADCRUMB
+       ═══════════════════════════════════════════════════════════ */
+    .breadcrumb {
+      padding: var(--spacing-md);
+      font-size: 12px;
+      color: var(--color-gris-light);
+      background: var(--color-gris-100);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .breadcrumb a {
+      color: var(--color-azul-700);
+      text-decoration: none;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       GALERÍA DE IMÁGENES
+       ═══════════════════════════════════════════════════════════ */
+    .gallery-section {
+      position: relative;
+      background: var(--color-gris-100);
+      aspect-ratio: 1;
+      overflow: hidden;
+    }
+
+    .gallery-main {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      position: relative;
+    }
+
+    .gallery-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .gallery-badges {
+      position: absolute;
+      top: var(--spacing-md);
+      left: var(--spacing-md);
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-sm);
+      z-index: 10;
+    }
+
+    .badge {
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: 12px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .badge-gift {
+      background: var(--color-amarillo-900);
+      color: var(--color-azul-900);
+    }
+
+    .badge-discount {
+      background: var(--color-azul-700);
+      color: var(--color-blanco);
+    }
+
+    .gallery-dots {
+      position: absolute;
+      bottom: var(--spacing-md);
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      z-index: 10;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.6);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .dot.active {
+      background: var(--color-blanco);
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       BLOQUE DE COMPRA (Primera vista crítica)
+       ═══════════════════════════════════════════════════════════ */
+    .purchase-block {
+      padding: var(--spacing-lg);
+      background: var(--color-blanco);
+      position: relative;
+      z-index: 50;
+    }
+
+    .brand-title {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .brand-link {
+      color: var(--color-azul-700);
+      font-size: 11px;
+      font-weight: 600;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .product-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--color-azul-900);
+      line-height: 1.3;
+      margin-bottom: var(--spacing-md);
+      max-width: 95%;
+    }
+
+    /* Rating */
+    .rating-section {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      margin-bottom: var(--spacing-lg);
+      font-size: 13px;
+    }
+
+    .stars {
+      color: var(--color-amarillo-900);
+      letter-spacing: 2px;
+    }
+
+    .rating-count {
+      color: var(--color-azul-700);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    /* PRECIOS - Jerarquía clara */
+    .price-section {
+      margin-bottom: var(--spacing-lg);
+      padding-bottom: var(--spacing-lg);
+      border-bottom: 1px solid var(--color-gris-50);
+    }
+
+    .price-main {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--color-azul-700);
+      line-height: 1;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .price-per-unit {
+      font-size: 12px;
+      color: var(--color-gris-light);
+    }
+
+    /* Selector de presentación (SKU/Variantes) */
+    .variants-section {
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .variants-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-azul-900);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: var(--spacing-sm);
+      display: block;
+    }
+
+    .variants-chips {
+      display: flex;
+      gap: var(--spacing-sm);
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .variants-chips::-webkit-scrollbar {
+      display: none;
+    }
+
+    .chip {
+      padding: 8px 16px;
+      border: 2px solid var(--color-gris-50);
+      background: var(--color-blanco);
+      border-radius: var(--radius-md);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-gris-text);
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+
+    .chip:hover {
+      border-color: var(--color-azul-500);
+    }
+
+    .chip.active {
+      background: var(--color-azul-700);
+      color: var(--color-blanco);
+      border-color: var(--color-azul-700);
+    }
+
+    /* Stepper de cantidad */
+    .quantity-section {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .quantity-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--color-azul-900);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      flex-shrink: 0;
+    }
+
+    .stepper {
+      display: flex;
+      align-items: center;
+      border: 2px solid var(--color-gris-50);
+      border-radius: var(--radius-md);
+      background: var(--color-blanco);
+    }
+
+    .stepper button {
+      width: 40px;
+      height: 40px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-size: 18px;
+      color: var(--color-azul-700);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .stepper input {
+      width: 40px;
+      height: 40px;
+      border: none;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 600;
+      background: transparent;
+      color: var(--color-azul-900);
+    }
+
+    .stepper input:focus {
+      outline: none;
+    }
+
+    /* CTA Primario - Full Width */
+    .cta-primary {
+      width: 100%;
+      padding: 16px var(--spacing-lg);
+      background: var(--color-azul-700);
+      color: var(--color-blanco);
+      border: none;
+      border-radius: var(--radius-lg);
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: var(--font-display);
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .cta-primary:hover {
+      background: var(--color-azul-900);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(25, 79, 144, 0.2);
+    }
+
+    .cta-primary:active {
+      transform: translateY(0);
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       STICKY BOTTOM BAR (aparece al scrollear)
+       ═══════════════════════════════════════════════════════════ */
+    .sticky-bar {
+      position: fixed;
+      bottom: -100px;
+      left: 0;
+      right: 0;
+      background: var(--color-blanco);
+      border-top: 1px solid var(--color-gris-50);
+      padding: var(--spacing-md);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--spacing-md);
+      z-index: 99;
+      transition: transform 0.3s ease;
+      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .sticky-bar.visible {
+      transform: translateY(-100px);
+    }
+
+    .sticky-price {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--color-azul-700);
+    }
+
+    .sticky-cta {
+      flex: 1;
+      padding: 12px var(--spacing-md);
+      background: var(--color-azul-700);
+      color: var(--color-blanco);
+      border: none;
+      border-radius: var(--radius-md);
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: var(--font-display);
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       ENVÍO PROGRAMADO (Card destacada única)
+       ═══════════════════════════════════════════════════════════ */
+    .scheduled-shipping {
+      margin: var(--spacing-lg) 0;
+      padding: var(--spacing-lg);
+      background: var(--color-amarillo-400);
+      border-radius: var(--radius-lg);
+      border: 2px solid var(--color-amarillo-300);
+    }
+
+    .scheduled-title {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-azul-900);
+      margin-bottom: var(--spacing-md);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+    }
+
+    .scheduled-price {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--color-azul-700);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .scheduled-toggle {
+      width: 100%;
+      padding: 12px var(--spacing-md);
+      background: var(--color-blanco);
+      border: 2px solid var(--color-amarillo-300);
+      border-radius: var(--radius-md);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-azul-900);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .scheduled-toggle:hover {
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    .scheduled-tooltip {
+      margin-top: var(--spacing-sm);
+      font-size: 11px;
+      color: var(--color-azul-900);
+      opacity: 0.8;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       OPCIONES DE ENVÍO (Acordeón compacto)
+       ═══════════════════════════════════════════════════════════ */
+    .shipping-accordion {
+      margin: var(--spacing-lg) 0;
+    }
+
+    .accordion-item {
+      border-bottom: 1px solid var(--color-gris-50);
+    }
+
+    .accordion-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--spacing-md) 0;
+      background: none;
+      border: none;
+      width: 100%;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-azul-900);
+      font-family: var(--font-body);
+    }
+
+    .accordion-header:hover {
+      color: var(--color-azul-700);
+    }
+
+    .accordion-icon {
+      font-size: 16px;
+      transition: transform 0.3s ease;
+    }
+
+    .accordion-icon.open {
+      transform: rotate(180deg);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0;
+    }
+
+    .accordion-content.open {
+      max-height: 200px;
+      padding-bottom: var(--spacing-md);
+    }
+
+    .shipping-option {
+      display: flex;
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-md);
+      last-child: {
+        margin-bottom: 0;
+      }
+    }
+
+    .shipping-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .shipping-info {
+      flex: 1;
+    }
+
+    .shipping-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-azul-900);
+      margin-bottom: 2px;
+    }
+
+    .shipping-subtitle {
+      font-size: 12px;
+      color: var(--color-gris-light);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       MEDIOS DE PAGO
+       ═══════════════════════════════════════════════════════════ */
+    .payment-methods {
+      margin: var(--spacing-lg) 0;
+      padding: var(--spacing-lg);
+      background: var(--color-gris-100);
+      border-radius: var(--radius-lg);
+    }
+
+    .payment-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-azul-900);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .payment-icons {
+      display: flex;
+      gap: var(--spacing-md);
+      flex-wrap: wrap;
+    }
+
+    .payment-icon {
+      width: 48px;
+      height: 32px;
+      background: var(--color-blanco);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       ACORDEONES (Descripción, Especificaciones, Ingredientes)
+       ═══════════════════════════════════════════════════════════ */
+    .content-section {
+      margin: var(--spacing-lg) 0;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--color-azul-900);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .accordion-body {
+      max-height: 120px;
+      overflow: hidden;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--color-gris-text);
+      transition: max-height 0.3s ease;
+    }
+
+    .accordion-body.expanded {
+      max-height: 2000px;
+    }
+
+    .expand-trigger {
+      color: var(--color-azul-700);
+      cursor: pointer;
+      font-weight: 600;
+      margin-top: var(--spacing-md);
+      display: inline-block;
+    }
+
+    /* Tabla de especificaciones */
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .specs-table td {
+      padding: var(--spacing-md) 0;
+      border-bottom: 1px solid var(--color-gris-50);
+      font-size: 13px;
+    }
+
+    .specs-label {
+      font-weight: 600;
+      color: var(--color-azul-900);
+      width: 40%;
+    }
+
+    .specs-value {
+      color: var(--color-gris-text);
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       REVIEWS
+       ═══════════════════════════════════════════════════════════ */
+    .reviews-section {
+      margin: var(--spacing-lg) 0;
+      padding: var(--spacing-lg);
+      background: var(--color-gris-100);
+      border-radius: var(--radius-lg);
+    }
+
+    .reviews-summary {
+      display: flex;
+      gap: var(--spacing-lg);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .review-rating {
+      flex: 0 0 80px;
+      text-align: center;
+    }
+
+    .review-rating-number {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--color-azul-700);
+      line-height: 1;
+    }
+
+    .review-stars {
+      color: var(--color-amarillo-900);
+      font-size: 14px;
+    }
+
+    .reviews-bars {
+      flex: 1;
+    }
+
+    .review-bar {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      margin-bottom: 8px;
+      font-size: 12px;
+    }
+
+    .review-bar-label {
+      flex: 0 0 40px;
+      text-align: right;
+      color: var(--color-gris-light);
+    }
+
+    .review-bar-fill {
+      flex: 1;
+      height: 4px;
+      background: var(--color-gris-50);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .review-bar-progress {
+      height: 100%;
+      background: var(--color-amarillo-900);
+    }
+
+    .review-bar-count {
+      flex: 0 0 30px;
+      text-align: right;
+      color: var(--color-gris-light);
+    }
+
+    .featured-reviews {
+      margin-top: var(--spacing-lg);
+    }
+
+    .review-item {
+      padding: var(--spacing-md) 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .review-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .review-author {
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--color-azul-900);
+    }
+
+    .review-date {
+      font-size: 11px;
+      color: var(--color-gris-light);
+    }
+
+    .review-stars-small {
+      color: var(--color-amarillo-900);
+      font-size: 12px;
+    }
+
+    .review-text {
+      font-size: 13px;
+      color: var(--color-gris-text);
+      line-height: 1.5;
+    }
+
+    .view-all-reviews {
+      display: block;
+      margin-top: var(--spacing-lg);
+      color: var(--color-azul-700);
+      text-align: center;
+      font-weight: 600;
+      text-decoration: none;
+      padding: var(--spacing-md);
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       CROSS-SELL / CARRUSEL
+       ═══════════════════════════════════════════════════════════ */
+    .cross-sell {
+      margin: var(--spacing-xl) 0;
+    }
+
+    .cross-sell-title {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--color-azul-900);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .carousel {
+      display: flex;
+      gap: var(--spacing-md);
+      overflow-x: auto;
+      scrollbar-width: none;
+      scroll-behavior: smooth;
+    }
+
+    .carousel::-webkit-scrollbar {
+      display: none;
+    }
+
+    .carousel-item {
+      flex: 0 0 calc(50% - 6px);
+      background: var(--color-gris-100);
+      border-radius: var(--radius-lg);
+      padding: var(--spacing-md);
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .carousel-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .carousel-image {
+      width: 100%;
+      aspect-ratio: 1;
+      background: var(--color-blanco);
+      border-radius: var(--radius-md);
+      margin-bottom: var(--spacing-md);
+      object-fit: cover;
+    }
+
+    .carousel-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--color-azul-900);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .carousel-price {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--color-azul-700);
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       FRANJA PUPPIS CLUB
+       ═══════════════════════════════════════════════════════════ */
+    .puppis-club {
+      margin-top: var(--spacing-xl);
+      padding: var(--spacing-lg);
+      background: linear-gradient(135deg, var(--color-amarillo-400) 0%, var(--color-amarillo-300) 100%);
+      border-radius: var(--radius-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .puppis-club::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 120px;
+      height: 120px;
+      background: rgba(25, 79, 144, 0.1);
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .puppis-club-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .club-title {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--color-azul-900);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .club-description {
+      font-size: 13px;
+      color: var(--color-azul-900);
+      margin-bottom: var(--spacing-md);
+      opacity: 0.9;
+    }
+
+    .club-cta {
+      display: inline-block;
+      padding: 10px 16px;
+      background: var(--color-azul-700);
+      color: var(--color-blanco);
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════════════ */
+    .footer {
+      background: var(--color-azul-900);
+      color: var(--color-blanco);
+      padding: var(--spacing-xl) var(--spacing-lg);
+      margin-top: var(--spacing-xl);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .footer-section {
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .footer-section-title {
+      font-weight: 700;
+      margin-bottom: var(--spacing-sm);
+      font-size: 13px;
+    }
+
+    .footer-link {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       RESPONSIVE DESKTOP (1280px+)
+       ═══════════════════════════════════════════════════════════ */
+    @media (min-width: 1024px) {
+      .purchase-block {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-xl);
+        align-items: start;
+        padding: var(--spacing-xl);
+      }
+
+      .gallery-section {
+        aspect-ratio: auto;
+        height: 500px;
+        grid-column: 1;
+      }
+
+      .purchase-info {
+        grid-column: 2;
+      }
+
+      .product-title {
+        font-size: 24px;
+      }
+
+      .price-main {
+        font-size: 40px;
+      }
+
+      .cta-primary {
+        min-height: 56px;
+        font-size: 18px;
+      }
+
+      .sticky-bar {
+        display: none;
+      }
+
+      .carousel-item {
+        flex: 0 0 calc(25% - 12px);
+      }
+
+      .content-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-xl);
+      }
+
+      .reviews-section {
+        grid-column: 1 / -1;
+      }
+    }
+
+    /* ═══════════════════════════════════════════════════════════
+       UTILIDADES
+       ═══════════════════════════════════════════════════════════ */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-lg);
+    }
+
+    @media (max-width: 480px) {
+      .product-title {
+        font-size: 18px;
+      }
+
+      .price-main {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER STICKY -->
+  <header class="header-top">
+    <div class="header-logo">pp</div>
+    <input type="text" class="header-search" placeholder="Buscar..." />
+    <button class="header-cart">🛒</button>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="#">Inicio</a> / Perros / Comida / <strong>Royal Canin Mini Adulto</strong>
+  </div>
+
+  <!-- GALERÍA -->
+  <section class="gallery-section">
+    <div class="gallery-badges">
+      <span class="badge badge-gift">🎁 Regalo</span>
+      <span class="badge badge-discount">-15% OFF</span>
+    </div>
+    <div class="gallery-main" id="gallery">
+      <img src="https://via.placeholder.com/390x390/E8F4F8/194F90?text=Producto+1" alt="Royal Canin Mini" class="gallery-image" />
+      <img src="https://via.placeholder.com/390x390/E8F4F8/194F90?text=Producto+2" alt="Detalles" class="gallery-image" />
+      <img src="https://via.placeholder.com/390x390/E8F4F8/194F90?text=Producto+3" alt="Empaque" class="gallery-image" />
+    </div>
+    <div class="gallery-dots">
+      <span class="dot active" onclick="goToSlide(0)"></span>
+      <span class="dot" onclick="goToSlide(1)"></span>
+      <span class="dot" onclick="goToSlide(2)"></span>
+    </div>
+  </section>
+
+  <!-- BLOQUE DE COMPRA -->
+  <section class="purchase-block">
+    <div class="purchase-info">
+      <!-- Marca y Título -->
+      <div class="brand-title">
+        <a href="#" class="brand-link">Royal Canin</a>
+      </div>
+      <h1 class="product-title">Royal Canin Mini Adulto 7,5 Kg</h1>
+
+      <!-- Rating -->
+      <div class="rating-section">
+        <span class="stars">★★★★★</span>
+        <span class="rating-count">(124 reseñas)</span>
+      </div>
+
+      <!-- PRECIOS -->
+      <div class="price-section">
+        <div class="price-main">$4.890</div>
+        <div class="price-per-unit">$652 / kg</div>
+      </div>
+
+      <!-- Selector de presentación -->
+      <div class="variants-section">
+        <label class="variants-label">Elige tu tamaño</label>
+        <div class="variants-chips">
+          <button class="chip">1 Kg</button>
+          <button class="chip">3 Kg</button>
+          <button class="chip active">7,5 Kg</button>
+        </div>
+      </div>
+
+      <!-- Stepper + CTA Principal -->
+      <div class="quantity-section">
+        <label class="quantity-label">Cantidad</label>
+        <div class="stepper">
+          <button onclick="decreaseQty()">−</button>
+          <input type="number" id="qty" value="1" min="1" />
+          <button onclick="increaseQty()">+</button>
+        </div>
+      </div>
+
+      <button class="cta-primary" onclick="addToCart()">Agregar al carrito</button>
+
+      <!-- ENVÍO PROGRAMADO (Card destacada) -->
+      <div class="scheduled-shipping">
+        <div class="scheduled-title">💳 Suscribite y ahorrá</div>
+        <div class="scheduled-price">$4.401 en cada entrega</div>
+        <button class="scheduled-toggle">Elegir suscripción (-10%)</button>
+        <div class="scheduled-tooltip">✓ Cancelás cuando quieras</div>
+      </div>
+
+      <!-- ENVÍO - Acordeón compacto -->
+      <div class="shipping-accordion">
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <span>📍 Opciones de envío</span>
+            <span class="accordion-icon">▼</span>
+          </button>
+          <div class="accordion-content">
+            <div class="shipping-option">
+              <span class="shipping-icon">🚚</span>
+              <div class="shipping-info">
+                <div class="shipping-title">Envío a domicilio</div>
+                <div class="shipping-subtitle">Mañana por la mañana</div>
+              </div>
+            </div>
+            <div class="shipping-option">
+              <span class="shipping-icon">⚡</span>
+              <div class="shipping-info">
+                <div class="shipping-title">Flash <3 hs</div>
+                <div class="shipping-subtitle">Disponible en CABA</div>
+              </div>
+            </div>
+            <div class="shipping-option">
+              <span class="shipping-icon">🏪</span>
+              <div class="shipping-info">
+                <div class="shipping-title">Retiro gratis</div>
+                <div class="shipping-subtitle">En sucursal Puppis</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEDIOS DE PAGO -->
+      <div class="payment-methods">
+        <div class="payment-title">Medios de pago</div>
+        <div class="payment-icons">
+          <div class="payment-icon">💳</div>
+          <div class="payment-icon">🏦</div>
+          <div class="payment-icon">📱</div>
+        </div>
+      </div>
+
+      <!-- DESCRIPCIÓN (Acordeón) -->
+      <div class="content-section">
+        <div>
+          <h3 class="section-title">Descripción</h3>
+          <div class="accordion-body" id="description-content">
+            <p>Alimento completo y balanceado para perros adultos de razas pequeñas. Fórmula especial con nutrientes que favorecen la salud digestiva y el mantenimiento del peso ideal...</p>
+            <div class="expand-trigger" onclick="expandSection(this)">+ Ver más</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ESPECIFICACIONES (Tabla) -->
+      <div class="content-section">
+        <div>
+          <h3 class="section-title">Especificaciones</h3>
+          <table class="specs-table">
+            <tr>
+              <td class="specs-label">Marca</td>
+              <td class="specs-value">Royal Canin</td>
+            </tr>
+            <tr>
+              <td class="specs-label">Presentación</td>
+              <td class="specs-value">7,5 Kg</td>
+            </tr>
+            <tr>
+              <td class="specs-label">Tipo</td>
+              <td class="specs-value">Alimento seco</td>
+            </tr>
+            <tr>
+              <td class="specs-label">Edad</td>
+              <td class="specs-value">Adulto</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <!-- INGREDIENTES (Acordeón) -->
+      <div class="content-section">
+        <button class="accordion-header" onclick="toggleAccordion(this)" style="width: 100%; justify-content: space-between; margin-bottom: var(--spacing-md);">
+          <span class="section-title" style="margin: 0;">Ingredientes</span>
+          <span class="accordion-icon">▼</span>
+        </button>
+        <div class="accordion-content">
+          <p style="font-size: 13px; color: var(--color-gris-text); line-height: 1.6;">
+            Arroz, harina de maíz, grasas animales, harina de carne, subproductos de origen animal, minerales, vitaminas, taurina...
+          </p>
+        </div>
+      </div>
+
+      <!-- REVIEWS -->
+      <div class="reviews-section">
+        <div class="reviews-summary">
+          <div class="review-rating">
+            <div class="review-rating-number">4.8</div>
+            <div class="review-stars">★★★★★</div>
+          </div>
+          <div class="reviews-bars">
+            <div class="review-bar">
+              <span class="review-bar-label">5⭐</span>
+              <div class="review-bar-fill">
+                <div class="review-bar-progress" style="width: 85%;"></div>
+              </div>
+              <span class="review-bar-count">105</span>
+            </div>
+            <div class="review-bar">
+              <span class="review-bar-label">4⭐</span>
+              <div class="review-bar-fill">
+                <div class="review-bar-progress" style="width: 12%;"></div>
+              </div>
+              <span class="review-bar-count">15</span>
+            </div>
+            <div class="review-bar">
+              <span class="review-bar-label">3⭐</span>
+              <div class="review-bar-fill">
+                <div class="review-bar-progress" style="width: 2%;"></div>
+              </div>
+              <span class="review-bar-count">3</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="featured-reviews">
+          <div class="review-item">
+            <div class="review-header">
+              <span class="review-author">Carolina G.</span>
+              <span class="review-date">Hace 2 semanas</span>
+            </div>
+            <div class="review-stars-small">★★★★★</div>
+            <p class="review-text">¡Excelente! Mi Duki la adora y se ve más saludable. Recomiendo 100%</p>
+          </div>
+
+          <div class="review-item">
+            <div class="review-header">
+              <span class="review-author">Martín R.</span>
+              <span class="review-date">Hace 1 mes</span>
+            </div>
+            <div class="review-stars-small">★★★★★</div>
+            <p class="review-text">Perfecto para perros pequeños. Buen precio en Puppis.</p>
+          </div>
+        </div>
+
+        <a href="#" class="view-all-reviews">Ver todas las reseñas →</a>
+      </div>
+
+      <!-- CROSS-SELL -->
+      <div class="cross-sell">
+        <h3 class="cross-sell-title">Completá su plato</h3>
+        <div class="carousel">
+          <div class="carousel-item">
+            <img src="https://via.placeholder.com/150/E8F4F8/194F90?text=Snack+1" alt="Snack" class="carousel-image" />
+            <div class="carousel-name">Premios Denta</div>
+            <div class="carousel-price">$890</div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://via.placeholder.com/150/E8F4F8/194F90?text=Húmedo+1" alt="Húmedo" class="carousel-image" />
+            <div class="carousel-name">Pâté Pollo</div>
+            <div class="carousel-price">$1.290</div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://via.placeholder.com/150/E8F4F8/194F90?text=Snack+2" alt="Snack" class="carousel-image" />
+            <div class="carousel-name">Chewies</div>
+            <div class="carousel-price">$690</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PUPPIS CLUB -->
+      <div class="puppis-club">
+        <div class="puppis-club-content">
+          <h3 class="club-title">✨ Puppis Club</h3>
+          <p class="club-description">Obtené 15% de descuento en tu primera compra con Puppis Club</p>
+          <a href="#" class="club-cta">Conocé los beneficios</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-section">
+      <div class="footer-section-title">AYUDA</div>
+      <a href="#" class="footer-link">Contacto</a>
+      <a href="#" class="footer-link">Preguntas frecuentes</a>
+      <a href="#" class="footer-link">Envíos y retiros</a>
+    </div>
+    <div class="footer-section">
+      <div class="footer-section-title">SOBRE PUPPIS</div>
+      <a href="#" class="footer-link">Quiénes somos</a>
+      <a href="#" class="footer-link">Sostenibilidad</a>
+      <a href="#" class="footer-link">Blog</a>
+    </div>
+    <div style="margin-top: var(--spacing-xl); padding-top: var(--spacing-lg); border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 11px; opacity: 0.8;">
+      © 2026 Puppis. Las mascotas primero. 🐾
+    </div>
+  </footer>
+
+  <!-- STICKY BAR (aparece al scrollear) -->
+  <div class="sticky-bar" id="stickyBar">
+    <div class="sticky-price" id="stickyPrice">$4.890</div>
+    <button class="sticky-cta" onclick="addToCart()">Agregar</button>
+  </div>
+
+  <script>
+    // ═══════════════════════════════════════════════════════════
+    // FUNCIONALIDAD
+    // ═══════════════════════════════════════════════════════════
+
+    let currentSlide = 0;
+    const gallery = document.getElementById('gallery');
+    const dots = document.querySelectorAll('.dot');
+    const stickyBar = document.getElementById('stickyBar');
+    let quantity = 1;
+
+    // GALERÍA - Swipe
+    function goToSlide(index) {
+      currentSlide = index;
+      gallery.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === index);
+      });
+    }
+
+    // CANTIDAD
+    function increaseQty() {
+      quantity++;
+      document.getElementById('qty').value = quantity;
+    }
+
+    function decreaseQty() {
+      if (quantity > 1) {
+        quantity--;
+        document.getElementById('qty').value = quantity;
+      }
+    }
+
+    // AGREGAR AL CARRITO
+    function addToCart() {
+      const qty = document.getElementById('qty').value || quantity;
+      alert(`¡Guau! Se agregaron ${qty} unidades al carrito 🛒`);
+      // Aquí iría la lógica real de carrito en VTEX
+    }
+
+    // STICKY BAR - mostrar/ocultar
+    window.addEventListener('scroll', () => {
+      const purchaseBlock = document.querySelector('.purchase-block');
+      const rect = purchaseBlock.getBoundingClientRect();
+
+      if (rect.bottom < window.innerHeight * 0.3) {
+        stickyBar.classList.add('visible');
+      } else {
+        stickyBar.classList.remove('visible');
+      }
+    });
+
+    // ACORDEONES
+    function toggleAccordion(button) {
+      const icon = button.querySelector('.accordion-icon');
+      const content = button.nextElementSibling;
+
+      if (!icon || !content) return;
+
+      icon.classList.toggle('open');
+      content.classList.toggle('open');
+    }
+
+    // EXPANDIR SECCIONES
+    function expandSection(trigger) {
+      const content = trigger.closest('.accordion-body');
+      content.classList.toggle('expanded');
+      trigger.textContent = content.classList.contains('expanded') ? '- Ver menos' : '+ Ver más';
+    }
+
+    // Gallery auto-scroll smooth
+    let autoScroll = setInterval(() => {
+      gallery.style.transition = 'transform 0.3s ease';
+      currentSlide = (currentSlide + 1) % 3;
+      goToSlide(currentSlide);
+    }, 5000);
+
+    gallery.addEventListener('mouseenter', () => clearInterval(autoScroll));
+  </script>
+</body>
+</html>
